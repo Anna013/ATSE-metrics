@@ -1,0 +1,47 @@
+public class MetricsExample {
+
+    public static double calculateAverage(double[] numbers) {
+        double total = 0;
+        for (double number : numbers) {
+            total += number;
+        }
+        double average = total / numbers.length;
+        return average;
+    }
+
+    public static int findMaximum(int[] numbers) {
+        int maximum = numbers[0];
+        for (int number : numbers) {
+            if (number > maximum) {
+                maximum = number;
+            }
+        }
+        return maximum;
+    }
+
+    public static boolean isPrime(int number) {
+        if (number < 2) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        double[] numbers = {1.5, 2.7, 3.8, 4.1, 5.9, 6.2, 7.4, 8.6, 9.3, 10.0};
+        double avg = calculateAverage(numbers);
+
+        int[] intNumbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int maxNum = findMaximum(intNumbers);
+
+        boolean prime = isPrime(7);
+
+        System.out.println("Average: " + avg);
+        System.out.println("Maximum number: " + maxNum);
+        System.out.println("Is 7 prime? " + prime);
+    }
+}
